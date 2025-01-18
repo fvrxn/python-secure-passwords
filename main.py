@@ -34,9 +34,16 @@ if __name__ == "__main__":
     # Password settings
     segments = 3
     segment_length = 8
-    number_of_passwords = 5
+    number_of_passwords = 1
+    save_to_file = True
 
     # Generate password
     for _ in range(number_of_passwords):
         generated_password = generate_password(segments, segment_length)
         print(f"Generated Password: {generated_password}")
+        
+        # Save password to file
+        if save_to_file:
+            with open("passwords.txt", "a") as file:
+                file.write(f"{generated_password}\n")
+            print("Password saved to passwords.txt")
