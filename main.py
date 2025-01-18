@@ -32,9 +32,11 @@ def generate_password(segments=3, segment_length=6):
 # MAIN
 if __name__ == "__main__":
     # Password settings
-    segments = 4
+    segments = 3
     segment_length = 8
+    number_of_passwords = 5
 
     # Generate password
-    generated_password = generate_password(segments, segment_length)
-    print(f"Generated Password: {generated_password}")
+    for _ in range(number_of_passwords):
+        generated_password = generate_password(segments, segment_length)
+        print(f"Generated Password: {generated_password}")
